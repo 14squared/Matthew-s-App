@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
+    public static final String EXTRA_MESSAGE = "com.example.helloandroid.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button)view;
         String message = button.getText().toString();
         Log.d(TAG, message);
+        intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 }
